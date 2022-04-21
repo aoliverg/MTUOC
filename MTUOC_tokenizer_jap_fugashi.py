@@ -175,14 +175,14 @@ class Tokenizer():
 
     
 def print_help():
-    print("MTUOC_tokenizer_zho_jieba.py A tokenizer for Chinese (using jieba), usage:")
+    print("MTUOC_tokenizer_jap_fugashi.py A tokenizer for Japanese (using fugashi), usage:")
     print("Simple tokenization:")
-    print('    cat "sentence to tokenize." | python3 MTUOC_tokenizer_zho_jieba.py tokenize')
-    print('    python3 MTUOC_tokenizer_zho_jieba.py tokenize < file_to_tokenize > tokenized_file')
+    print('    cat "sentence to tokenize." | python3 MTUOC_tokenizer_jap_fugashi.py tokenize')
+    print('    python3 MTUOC_tokenizer_jap_fugashi.py tokenize < file_to_tokenize > tokenized_file')
     print()
     print("Simple detokenization:")
-    print('    cat "sentence to tokenize." | python3 MTUOC_tokenizer_zho_jieba.py detokenize')
-    print('    python3 MTUOC_tokenizer_zho_jieba.py detokenize < file_to_detokenize > detokenized_file')
+    print('    cat "sentence to tokenize." | python3 MTUOC_tokenizer_jap_fugashi.py detokenize')
+    print('    python3 MTUOC_tokenizer_jap_fugashi.py detokenize < file_to_detokenize > detokenized_file')
     print()
     print("Advanced options:")
     print("    tokenization/detokenization with joiner marks (￭): tokenize_j / detokenize_j")
