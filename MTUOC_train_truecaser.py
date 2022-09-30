@@ -19,6 +19,7 @@ import codecs
 import pickle
 import argparse
 import importlib
+import importlib.util
 
 class TC_Trainer():
     def __init__(self, MTUOCPath=".", tc_model=None, corpus=None, dictionary=None, tokenizer=None, ):
