@@ -18,9 +18,9 @@ re_num_tl = re.compile(r'(([\d,.\-/]\s?)+)')
 
 def subwordnmt_train(INPUT,SLcode2="en",TLcode2="es",NUM_OPERATIONS=85000,CODES_file="codes_file"):
     if len(INPUT.split(" "))==1:
-        command="subword-nmt learn-joint-bpe-and-vocab --input "+INPUT+" -s "+str(NUM_OPERATIONS)+" -o codes_file --write-vocabulary vocab_BPE."+SLcode2
+        command="subword-nmt learn-joint-bpe-and-vocab --input "+INPUT+" -s "+str(NUM_OPERATIONS)+" -o "+CODES_file+" --write-vocabulary vocab_BPE."+SLcode2
     elif len(INPUT.split(" "))==2:
-        command="subword-nmt learn-joint-bpe-and-vocab --input "+INPUT+" -s "+str(NUM_OPERATIONS)+" -o codes_file --write-vocabulary vocab_BPE."+SLcode2+" vocab_BPE."+TLcode2
+        command="subword-nmt learn-joint-bpe-and-vocab --input "+INPUT+" -s "+str(NUM_OPERATIONS)+" -o "+CODES_file+" ----write-vocabulary vocab_BPE."+SLcode2+" vocab_BPE."+TLcode2
     print(command)
     os.system(command)
     

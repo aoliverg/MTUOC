@@ -3,7 +3,7 @@ import codecs
 import sys
 
 
-def guided_alignment_fast_align(MTUOC="/MTUOC",ROOTNAME_ALI="train.sp",ROOTNAME_OUT="train.sp",SL="en",TL="es",BOTH_DIRECTIONS=False,VERBOSE=True):
+def guided_alignment_fast_align(MTUOC="/MTUOC",ROOTNAME_ALI="train.sp",ROOTNAME_OUT="train.sp",weightsFile="weights.txt",SL="en",TL="es",BOTH_DIRECTIONS=False,VERBOSE=True):
     if VERBOSE: print("Alignment using fast_align:",ROOTNAME_ALI,SL,TL)
     sys.path.append(MTUOC)
     from MTUOC_check_guided_alignment import check_guided_alignment
@@ -26,7 +26,7 @@ def guided_alignment_fast_align(MTUOC="/MTUOC",ROOTNAME_ALI="train.sp",ROOTNAME_
     if VERBOSE: print(command)
     os.system(command)
     if VERBOSE: print("Checking guided alignment")
-    check_guided_alignment(FILE1,FILE2,ROOTNAME_OUT+"."+SL+"."+TL+".align")
+    check_guided_alignment(FILE1,FILE2,weightsFile,ROOTNAME_OUT+"."+SL+"."+TL+".align")
     listfiles = os.listdir(".")
     try:
         os.remove(FILEOUT)
