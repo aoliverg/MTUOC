@@ -56,7 +56,7 @@ def guided_alignment_eflomal(MTUOC="/MTUOC",ROOTNAME_ALI="train.sp",ROOTNAME_OUT
     os.remove("todelete.align")
     os.remove(FILEOUT)
     for file in listfiles:
-        if file.startswith("tempsplitted-") or file.startswith("tempaliforward") or file.startswith("tempalireverse") or file.endswith(".temp"):
+        if file.startswith("tempsplitted-") or file.startswith("tempaliforward") or file.startswith("tempalireverse"):
             try:
                 os.remove(file) 
             except:
