@@ -37,6 +37,7 @@ class TC_Trainer():
         self.corpus=corpus
         self.dictionary=dictionary
         self.tc_model=tc_model
+        self.maxlines=maxlines
         self.tc={}
     
     def set_MTUOCPath(self, path):
@@ -119,7 +120,7 @@ class TC_Trainer():
                                 tc[key]["u1"]+=1
                             elif tipus=="uc":
                                 tc[key]["uc"]+=1                           
-                if maxlines>-1 and contlines>=maxlines:
+                if self.maxlines>-1 and contlines>=self.maxlines:
                     break                    
                                 
                         
