@@ -19,10 +19,9 @@ import codecs
 import pickle
 import argparse
 import importlib
-import importlib.util
 
 class TC_Trainer():
-    def __init__(self, MTUOCPath=".", tc_model=None, corpus=None, dictionary=None, tokenizer=None, ):
+    def __init__(self, MTUOCPath=".", tc_model=None, corpus=None, dictionary=None, tokenizer=None, maxlines=-1):
         self.initchars=["¡","¿","-","*","+","'",'"',"«","»","—","‘","’","“","”","„",]
         if tokenizer==None:
             self.tokenizer=None
@@ -89,7 +88,9 @@ class TC_Trainer():
         if not self.corpus=="None":
             print("Reading corpus:",self.corpus)
             entrada=codecs.open(self.corpus,"r",encoding="utf-8")
+            contlines=0
             for line in entrada:
+                contlines+=1
                 line=line.strip()
                 tipus=self.detect_type(line)
                 if tipus=="regular":
@@ -118,7 +119,8 @@ class TC_Trainer():
                                 tc[key]["u1"]+=1
                             elif tipus=="uc":
                                 tc[key]["uc"]+=1                           
-                                    
+                if maxlines>-1 and contlines>=maxlines:
+                    break                    
                                 
                         
         if not self.dictionary=="None":
